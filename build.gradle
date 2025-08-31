@@ -171,7 +171,7 @@ tasks.register('installClient', DefaultTask) {
             return
         }
 
-        String clientVersion = mindustryVersionProp
+        String clientVersion = mindustryVersionProp.get()
         def clientFile = mindustryPath.child("client-${clientVersion}.jar")
 
         if (clientFile.exists()) {
@@ -232,7 +232,7 @@ tasks.register('runClient', DefaultTask) {
         def mindustrySaves = mindustryPath
         if(isSteam) mindustrySaves = mindustrySaves.child("saves")
 
-        String clientVersion = mindustryVersionProp
+        String clientVersion = mindustryVersionProp.get()
         def clientFile = mindustryPath.child("client-${clientVersion}.jar")
         if(isSteam) clientFile = mindustryPath.child("Mindustry.exe")
 
